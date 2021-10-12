@@ -25,3 +25,16 @@ print(products[0][0])
 
 for p in products:
 	print(p[0], '的價格是', p[1])
+
+"""
+1. 字串可以做 + 跟 *
+2. 寫到檔案的程式碼
+3. 改成存csv格式
+4. with解釋複習t
+
+"""
+with open('products.csv', 'w') as f:
+	for p in products:
+		f.write(p[0] + ',' + p[1] + '\n') #字串以 + 合併為1個大字串 
+		                                  # csv檔以逗點區隔
+		                                  
