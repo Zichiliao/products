@@ -7,10 +7,18 @@
 6. 把讀到的內容裝進清單
 
 """
+"""
+1. continue教學
+2. 重點整理，解釋continue通常都是寫在迴圈中很高的位置
+3. 建立版本上傳GitHub
+
+"""
 products = []
 products1 = []
 with open('products.csv', 'r', encoding='utf-8') as f:
 	for line in f:
+		if '商品,價格' in line:
+			continue # 跳到下一回
 		name, price = line.strip().split(',')
 		products.append([name, price])
 
@@ -21,6 +29,7 @@ print(products)
 print(products1)
 
 """
+
 1. GitHub建立專案
 2. 基本程式碼
 3. 二維清單介紹
