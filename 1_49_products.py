@@ -1,4 +1,9 @@
 """
+1. import os (作業系統模組)
+2. 使用os.path.isfile()來檢查檔案在不在
+
+"""
+"""
 1. 增加讀取檔案程式碼
 2. 用.split(',')來用逗點做分割 
 3. 用.strip()來除掉換行符號(\n)
@@ -13,17 +18,25 @@
 3. 建立版本上傳GitHub
 
 """
+
+import os # operationg system -- 像是電腦的政府
+
 products = []
 products1 = []
-with open('products.csv', 'r', encoding='utf-8') as f:
-	for line in f:
-		if '商品,價格' in line:
-			continue # 跳到下一回
-		name, price = line.strip().split(',')
-		products.append([name, price])
 
-		s = line.strip().split(',')
-		products1.append(s)
+if os.path.isfile('products.csv'):
+	print('yeah!,找到檔案了!')
+	with open('products.csv', 'r', encoding='utf-8') as f:
+		for line in f:
+			if '商品,價格' in line:
+				continue # 跳到下一回
+			name, price = line.strip().split(',')
+			products.append([name, price])
+
+			s = line.strip().split(',')
+			products1.append(s)
+else:
+	print('找不到檔案.....')
 
 print(products)
 print(products1)
@@ -52,6 +65,7 @@ print(products)
 
 print(products[0][0])
 
+# 讀取每一筆資料
 for p in products:
 	print(p[0], '的價格是', p[1])
 
