@@ -1,4 +1,26 @@
 """
+1. 增加讀取檔案程式碼
+2. 用.split(',')來用逗點做分割 
+3. 用.strip()來除掉換行符號(\n)
+4. 加上encoding='utf-8'來讀取
+5. 解釋split完會變清單
+6. 把讀到的內容裝進清單
+
+"""
+products = []
+products1 = []
+with open('products.csv', 'r', encoding='utf-8') as f:
+	for line in f:
+		name, price = line.strip().split(',')
+		products.append([name, price])
+
+		s = line.strip().split(',')
+		products1.append(s)
+
+print(products)
+print(products1)
+
+"""
 1. GitHub建立專案
 2. 基本程式碼
 3. 二維清單介紹
@@ -7,9 +29,7 @@
 6. 建立版本上傳
 7. for loop搞清楚每個東西是甚麼
 8. 建立版本上傳
-"""
-
-products = []
+""" 
 while True:
 	name = input('請輸入商品名稱: ')
 	if name == 'q':
