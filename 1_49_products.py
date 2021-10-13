@@ -33,8 +33,9 @@ for p in products:
 4. with解釋複習t
 
 """
-with open('products.csv', 'w') as f:
+with open('products.csv', 'w', encoding='utf-8') as f:
+	f.write('商品,價格\n')
 	for p in products:
 		f.write(p[0] + ',' + p[1] + '\n') #字串以 + 合併為1個大字串 
 		                                  # csv檔以逗點區隔
-		                                  
+
